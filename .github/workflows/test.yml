@@ -1,10 +1,10 @@
 name: test
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-  
+    branches: [main]
+
 jobs:
   macos:
     strategy:
@@ -28,8 +28,8 @@ jobs:
       matrix:
         swiftver: [swift:5.7]
         swiftos: [jammy, amazonlinux2]
-    container: ${{ format('{0}-{1}', matrix.swiftver, matrix.swiftos) }}
     runs-on: ubuntu-latest
+    container: ${{ format('{0}-{1}', matrix.swiftver, matrix.swiftos) }}
     steps:
       - name: Check out code
         uses: actions/checkout@v4
