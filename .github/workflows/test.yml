@@ -25,12 +25,8 @@ jobs:
       fail-fast: false
       matrix:
         swiftver:
-          - swift:5.10.1
+          - swift:5.10
         swiftos:
-          - jammy
-          - mantic
-          - focal
-          - rhel-ubi9⁠
           - amazonlinux2
     container: ${{ format('{0}-{1}', matrix.swiftver, matrix.swiftos) }}
     runs-on: ubuntu-latest
